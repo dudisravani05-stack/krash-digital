@@ -39,8 +39,17 @@ try {
     const firebaseApp = initializeApp(firebaseConfig);
     db = getFirestore(firebaseApp, firebaseConfig.firestoreDatabaseId || undefined);
     console.log("Firebase Database successfully initialized on server with project ID:", firebaseConfig.projectId);
+  } else if (process.env.FIREBASE_CONFIG) {
+    try {
+      const firebaseConfig = JSON.parse(process.env.FIREBASE_CONFIG as string);
+      const firebaseApp = initializeApp(firebaseConfig);
+      db = getFirestore(firebaseApp, firebaseConfig.firestoreDatabaseId || undefined);
+      console.log("Firebase Database initialized from FIREBASE_CONFIG env var with project ID:", firebaseConfig.projectId);
+    } catch (e) {
+      console.warn("Failed to parse FIREBASE_CONFIG env var, falling back to local storage:", e);
+    }
   } else {
-    console.warn("firebase-applet-config.json not found. Falling back to local flat file storage.");
+    console.warn("firebase-applet-config.json not found and FIREBASE_CONFIG env var missing. Falling back to local flat file storage.");
   }
 } catch (error) {
   console.error("Failed to initialize Firebase database:", error);

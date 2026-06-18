@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 
 import { SERVICES, WHY_CHOOSE_US, STATS, PORTFOLIO, TESTIMONIALS, PRICING, FAQS } from "./data";
+import logoImg from "./assets/images/krash_logo_v2_1781676503515.jpg";
 import { Service } from "./types";
 
 import AIReportPopup from "./components/AIReportPopup";
@@ -189,7 +190,7 @@ export default function App() {
             {/* Brand Logo */}
             <a href="#hero" onClick={() => setActiveTab("home")} className="flex items-center gap-2.5 group">
               <img 
-                src="/src/assets/images/krash_logo_v2_1781676503515.jpg" 
+                src={logoImg} 
                 alt="Krash Digital Logo"
                 className="w-10 h-10 object-cover rounded-xl border border-white/10 group-hover:scale-105 transition-transform duration-200"
                 referrerPolicy="no-referrer"
@@ -961,7 +962,7 @@ export default function App() {
             <div className="md:col-span-5 space-y-4">
               <div className="flex items-center gap-2.5">
                 <img 
-                  src="/src/assets/images/krash_logo_v2_1781676503515.jpg" 
+                  src={logoImg} 
                   alt="Krash Digital Logo"
                   className="w-10 h-10 object-cover rounded-xl border border-white/10"
                   referrerPolicy="no-referrer"

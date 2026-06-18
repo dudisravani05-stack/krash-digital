@@ -1,4 +1,7 @@
 import { Service, WhyChooseUsItem, StatItem, PortfolioItem, Testimonial, PricingPlan, FAQItem } from "./types";
+import websiteDesignImg from "./assets/images/website_design_mockup_1781671709062.jpg";
+import brandingShowcaseImg from "./assets/images/branding_showcase_1781671726310.jpg";
+import socialMediaImg from "./assets/images/social_media_posts_1781671743760.jpg";
 
 export const SERVICES: Service[] = [
   {
@@ -111,7 +114,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     category: "Website Design",
     title: "Revamped Next-Gen Fintech Landing Platform",
     client: "Shikhar Finance",
-    image: "/src/assets/images/website_design_mockup_1781671709062.jpg",
+    image: websiteDesignImg,
     metric: "340% Lead Boost",
     desc: "A custom high-contrast dark visual interface focused on secure lead-capture, fluid micro-interactions, and visual credibility indicators."
   },
@@ -120,7 +123,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     category: "Branding",
     title: "Holistic Identity System for AI Logistics Hub",
     client: "Gati Logistics",
-    image: "/src/assets/images/branding_showcase_1781671726310.jpg",
+    image: brandingShowcaseImg,
     metric: "100% Cohesive Presence",
     desc: "Engineered elegant abstract neon logo, glass-molded industrial packaging guidelines, and premium digital assets for corporate pitches."
   },
@@ -129,7 +132,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     category: "Social Media",
     title: "Omnichannel Organic Engagement Scale-up",
     client: "Tejas Wearables",
-    image: "/src/assets/images/social_media_posts_1781671743760.jpg",
+    image: socialMediaImg,
     metric: "+56K Organic Followers",
     desc: "Curated responsive minimalist content grids, aesthetic tech diagrams, and value carousel series which drove record viral reach on digital reels."
   },

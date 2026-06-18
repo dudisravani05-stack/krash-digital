@@ -1,0 +1,6 @@
+{
+  "name": "Krash Digital",
+  "description": "Modern premium conversion-focused landing page for Krash Digital, an AI-powered marketing agency.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

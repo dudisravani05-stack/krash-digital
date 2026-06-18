@@ -8,6 +8,7 @@ import {
 
 import { SERVICES, WHY_CHOOSE_US, STATS, PORTFOLIO, TESTIMONIALS, PRICING, FAQS } from "./data";
 import logoImg from "./assets/images/krash_logo_v2_1781676503515.jpg";
+import marketingMockup from "./assets/images/marketing_dashboard_mockup_1781671692621.jpg";
 import { Service } from "./types";
 
 import AIReportPopup from "./components/AIReportPopup";
@@ -336,7 +337,7 @@ export default function App() {
                 
                 {/* Visual Image representing mockup dashboard */}
                 <img
-                  src="/src/assets/images/marketing_dashboard_mockup_1781671692621.jpg"
+                  src={marketingMockup}
                   alt="Krash Digital Marketing Diagnostics Mockup Chart"
                   referrerPolicy="no-referrer"
                   className="rounded-2xl border border-white/15 shadow-inner object-cover w-full h-[320px] sm:h-[400px]"

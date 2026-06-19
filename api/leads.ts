@@ -1,17 +1,17 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
-import { getLeads, saveLead, Lead } from "../lib/firebase";
+import { getLeads, saveLead, Lead } from "../../lib/firebase";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, x-admin-passcode");
 
   if (req.method === "OPTIONS") {
     return res.status(200).end();
   }
 
-  // GET /api/leads - retrieve leads
-  if (req.method === "GET" && req.url === "/api/leads") {
+  // GET /api/leads - retrieve leads (requires passcode)
+  if (req.method === "GET") {
     try {
       const passcode = req.headers["x-admin-passcode"];
       if (passcode !== "Lol@4455") {
@@ -27,7 +27,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   // POST /api/leads - submit new lead
-  if (req.method === "POST" && req.url === "/api/leads") {
+  if (req.method === "POST") {
     try {
       const { name, email, phone, businessName, message, source, businessNiche, auditResults } = req.body;
 
@@ -53,9 +53,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(201).json({ success: true, lead: newLead });
     } catch (error: any) {
       console.error("Error saving lead:", error);
-      return res.status(500).json({ error: "Failed to submit lead." });
+      return res.status(500).json({ error: "Failed to submit lead.", details: error.message });
     }
   }
 
-  return res.status(404).json({ error: "API endpoint not found" });
+  return res.status(405).json({ error: "Method not allowed" });
 }

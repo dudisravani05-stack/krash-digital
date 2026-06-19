@@ -1,5 +1,5 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
-import { getAiClient, generateTemplateAudit } from "../lib/ai";
+import { getAiClient, generateTemplateAudit } from "../lib/ai.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
